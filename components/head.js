@@ -4,7 +4,7 @@ export default function Index(props) {
   const {
     title = "memes | louiechristie.com",
     description = "... (Internet, slang) Something, usually humorous, which is copied and circulated online with slight adaptations, including quizzes, basic pictures, video templates etc.",
-    image = "lc-icon.svg",
+    image = "/images/lc-icon.svg",
   } = props;
 
   return (
@@ -28,6 +28,30 @@ export default function Index(props) {
         />
         <meta name="monetization" content="$ilp.gatehub.net/484331722" />
       </Head>
+
+      <header>
+        <nav>
+          <div id="home-button">
+            <a href="/">
+              <img
+                src="/images/lc-icon.svg"
+                width="40"
+                height="40"
+                alt="louiechristie.com icon, L C initials handwritten"
+                role="img"
+              />
+            </a>
+          </div>
+          <div id="hamnav">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger" />
+            <div id="hamitems">
+              <a href="/">home</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
       <h1>{title}</h1>
     </div>
   );
