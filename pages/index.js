@@ -1,8 +1,13 @@
+import "../normalize.css";
+import "../stylesheet.css";
+import Link from "flareact/link";
+
+import Head from "../components/head";
+import Footer from "../components/footer";
+
+import memes from "../memes";
+
 export async function getEdgeProps() {
-  const response = await fetch('https://raw.githubusercontent.com/louiechristie/louiechristie.github.io/master/memes/items.json');
-
-  const memes = await response.json();
-
   return {
     props: {
       memes,
@@ -11,14 +16,16 @@ export async function getEdgeProps() {
 }
 
 export default function Index(props) {
-  const {memes} = props;
+  const { memes } = props;
 
   return (
     <>
-      <h1>Memes</h1>
+      <Head title="Memes" />
 
       <div class="memes-container">
-        <blockquote class="meme-definition" cite="https://en.wiktionary.org/wiki/meme">
+        <blockquote
+          class="meme-definition"
+          cite="https://en.wiktionary.org/wiki/meme">
           <p>
             <strong>Meme</strong> ... (Internet, slang) Something, usually
             humorous, which is copied and circulated online with slight
@@ -28,17 +35,20 @@ export default function Index(props) {
         </blockquote>
 
         <ul class="memes-list">
-        {memes.map(item => (
-          <a href={`./${item.url}`}>
-            <li key={item.url} class="box-shadow">
-              <img src={item.image} alt={item.alt} />
-              <h2>{item.title}</h2>
-            </li>
-          </a>
-        ))}
-      </ul>
-
+          {memes.map((item) => (
+            <Link href={`/${item.url}`}>
+              <a>
+                <li key={item.url} class="box-shadow">
+                  <img src={item.image} alt={item.alt} />
+                  <h2>{item.title}</h2>
+                </li>
+              </a>
+            </Link>
+          ))}
+        </ul>
       </div>
-  </>
+
+      <Footer />
+    </>
   );
 }
