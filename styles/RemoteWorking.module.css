@@ -1,0 +1,15 @@
+.videoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tweetContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.amazonAdContainer {
+  width: 120px;
+  height: 240px;
+}

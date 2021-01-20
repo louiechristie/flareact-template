@@ -30,26 +30,31 @@ export default function Index(props) {
       </Head>
 
       <header>
-        <nav>
-          <div id="home-button">
-            <a href="/">
-              <img
-                src="/images/lc-icon.svg"
-                width="40"
-                height="40"
-                alt="louiechristie.com icon, L C initials handwritten"
-                role="img"
-              />
-            </a>
-          </div>
-          <div id="hamnav">
-            <label for="hamburger">&#9776;</label>
-            <input type="checkbox" id="hamburger" />
-            <div id="hamitems">
-              <a href="/">home</a>
-            </div>
-          </div>
-        </nav>
+      <nav>
+      <div id="home-button">
+        <a href="/"><img src="/images/lc-icon.svg" width="40" height="40"
+            alt="louiechristie.com icon, L C initials handwritten" role="img" />
+        </a>
+      </div>
+      <div id="hamnav">
+        <label for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+        <div id="hamitems">
+          <a href="/">
+            home</a> <a href="/adventure/">adventure</a>
+          <a href="/blog/">blog</a>
+          <a href="https://comedy.louiechristie.com">comedy</a>
+          <a href="/#experiments">experiments</a>
+          <a href="/#tech-talks">talks</a>
+          <a href="/intro-to-web-dev-course/">tutorials</a>
+          <a href="/memes/" className="active">memes</a>
+          <a href="/#profiles">profiles</a>
+          <a href="/#about">about</a>
+          <a href="/blog/contact/">contact</a>
+        </div>
+      </div>
+
+    </nav>
       </header>
 
       <h1>{title}</h1>
